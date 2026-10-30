@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Informação sobre cuidado com o corpo, mudanças na infância e adolescência e orientação profissional."
+  >
+  <title>Preservação | Aureola</title>
+
+  <style>
+    :root {
+      --rosa-escuro: #9f315e;
+      --rosa-medio: #d66b94;
+      --rosa-claro: #f9e7ee;
+      --rosa-suave: #fff5f8;
+      --texto: #30252a;
+      --texto-suave: #66575e;
+      --branco: #ffffff;
+      --borda: #f0d7e0;
+      --sombra: 0 12px 32px rgba(111, 40, 70, 0.1);
+      --raio: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--branco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid var(--borda);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-conteudo {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .marca {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 12px;
+      color: var(--rosa-escuro);
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .marca img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--texto);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a[aria-current="page"] {
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+    }
+
+    .hero {
+      padding: 72px 0;
+      background:
+        radial-gradient(ellipse at 90% 15%, #f8dce7 0, transparent 34%),
+        linear-gradient(120deg, #fff 45%, #fff5f8 100%);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin-bottom: 16px;
+      color: var(--rosa-escuro);
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      color: var(--rosa-escuro);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 800px;
+      color: var(--texto-suave);
+      font-size: 1.08rem;
+    }
+
+    section.conteudo {
+      padding: 70px 0;
+    }
+
+    .secao-rosa {
+      background: var(--rosa-suave);
+    }
+
+    .secao-rosa-forte {
+      background: var(--rosa-claro);
+    }
+
+    .titulo-secao {
+      max-width: 780px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .titulo-secao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .duas-colunas {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+    }
+
+    .foto-secao {
+      width: 100%;
+      height: 340px;
+      border-radius: var(--raio);
+      box-shadow: var(--sombra);
+      object-fit: cover;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .galeria figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      background: var(--branco);
+      box-shadow: 0 8px 24px rgba(111, 40, 70, 0.06);
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .galeria figcaption {
+      padding: 14px 16px;
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+    }
+
+    .cartoes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cartao {
+      padding: 26px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: var(--branco);
+      box-shadow: 0 8px 24px rgba(111, 40, 70, 0.06);
+    }
+
+    .cartao h3 {
+      margin-bottom: 10px;
+      color: var(--rosa-escuro);
+      font-size: 1.2rem;
+    }
+
+    .cartao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .nota {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      color: var(--texto-suave);
+      background: var(--branco);
+      font-size: 0.94rem;
+    }
+
+    .rodape {
+      padding: 48px 0 20px;
+      color: var(--branco);
+      background: #56263b;
+    }
+
+    .rodape-conteudo {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .rodape .marca {
+      margin-bottom: 12px;
+      color: var(--branco);
+    }
+
+    .rodape .marca img {
+      background: var(--branco);
+    }
+
+    .rodape h3 {
+      margin-bottom: 10px;
+      color: #ffd8e6;
+    }
+
+    .rodape p,
+    .rodape a {
+      color: #f7eaf0;
+    }
+
+    .rodape-links {
+      display: grid;
+      justify-items: start;
+      gap: 6px;
+    }
+
+    .direitos {
+      margin: 34px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+      color: #f7eaf0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .nav-conteudo {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .duas-colunas {
+        grid-template-columns: 1fr;
+      }
+
+      .cartoes,
+      .galeria {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section.conteudo {
+        padding: 54px 0;
+      }
+
+      .nav-links {
+        gap: 4px;
+      }
+
+      .nav-links a {
+        padding: 7px 10px;
+        font-size: 0.84rem;
+      }
+
+      .cartoes,
+      .galeria,
+      .rodape-conteudo {
+        grid-template-columns: 1fr;
+      }
+
+      .foto-secao {
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-conteudo">
+      <a class="marca" href="index.html" aria-label="Aureola - página inicial">
+        <img src="img/logo.png" alt="Logo da Aureola">
+        <span>Aureola</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="caminhadas.html">Caminhadas</a>
+        <a href="tratamentos.html">Tratamentos e Vitórias</a>
+        <a href="Preservação.html" aria-current="page">Preservação</a>
+        <a href="Ondefazerexames.html">Onde fazer exames</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="etiqueta">Cuidado, informação e conversa</span>
+        <h1>Aprender sobre o corpo começa com acolhimento</h1>
+        <p>
+          Falar sobre o corpo de forma tranquila e adequada à idade ajuda
+          crianças e adolescentes a reconhecer mudanças e a pedir ajuda quando
+          algo preocupa. O diálogo com pais, responsáveis ou outro adulto de
+          confiança é parte importante desse cuidado.
+        </p>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <div class="container duas-colunas">
+        <div>
+          <span class="etiqueta">Crescimento e mudanças</span>
+          <h2>Converse sobre o corpo desde a infância</h2>
+          <p>
+            O corpo muda conforme a pessoa cresce, especialmente durante a
+            puberdade. Essas mudanças podem gerar dúvidas; conversar com
+            respeito e sem vergonha permite que crianças e adolescentes
+            compartilhem suas preocupações com um adulto de confiança.
+          </p>
+          <p>
+            Pais e responsáveis podem ensinar os nomes corretos das partes do
+            corpo, falar sobre privacidade e limites, e deixar claro que a
+            criança pode contar se sentir desconforto ou perceber algo diferente.
+          </p>
+        </div>
+
+        <img
+          class="foto-secao"
+          src="img/family.jpg"
+          alt="Imagem ilustrativa de uma família conversando"
+        >
+      </div>
+    </section>
+
+    <section class="conteudo secao-rosa">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Galeria</span>
+          <h2>Histórias que merecem ser acolhidas</h2>
+          <p>
+            Espaço para compartilhar imagens e histórias com sensibilidade,
+            respeito e autorização.
+          </p>
+        </div>
+
+        <div class="galeria">
+          <figure>
+            <img src="img/crianca1.jpg" alt="Imagem ilustrativa para substituir por foto autorizada">
+            <figcaption>Sophie — 7 anos, tratada do câncer</figcaption>
+          </figure>
+
+          <figure>
+            <img src="img/menina2.jpg" alt="Imagem ilustrativa para substituir por foto autorizada">
+            <figcaption>Yara — 8 anos, tratada do câncer </figcaption>
+          </figure>
+
+          <figure>
+            <img src="img/menino1.jpg" alt="Imagem ilustrativa para substituir por foto autorizada">
+            <figcaption>Davi — 8 anos, tratado do câncer</figcaption>
+          </figure>
+
+          <figure>
+            <img src="img/idosa.jpg" alt="Imagem ilustrativa para substituir por foto autorizada">
+            <figcaption> Helena — 68 anos , tratada do câncer</figcaption>
+          </figure>
+
+          <figure>
+            <img src="img/idosab.jpg" alt="Imagem ilustrativa para substituir por foto autorizada">
+            <figcaption> Marlene — 74 anos, tratada do câncer</figcaption>
+          </figure>
+
+          <figure>
+            <img src="img/idsoso.jpg" alt="Imagem ilustrativa para substituir por foto autorizada">
+            <figcaption>Antônio — 71 anos , tratado do câncer</figcaption>
+          </figure>
+        </div>
+
+        <div class="nota">
+Seis histórias, uma mesma mensagem: a esperança é capaz de
+ florescer mesmo diante dos maiores desafios. 
+ Essas seis pessoas enfrentaram o câncer de mama e hoje representam a força, a coragem
+  e a importância do acolhimento durante a jornada. Suas histórias nos lembram que informação, acompanhamento profissional,
+ apoio e cuidado fazem a diferença. Cada trajetória é única, mas todas carregam uma mensagem em comum: a vida merece ser celebrada!
+        </div>
+      </div>
+    </section>
+
+    <section class="conteudo secao-rosa-forte">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Cuidado em cada fase</span>
+          <h2>Exames e acompanhamento devem ser orientados por profissionais</h2>
+          <p>
+            Não existe recomendação geral para fazer exames de rastreamento do
+            câncer de mama em crianças. A necessidade de avaliação depende de
+            sintomas, histórico e orientação da equipe de saúde.
+          </p>
+        </div>
+
+        <div class="cartoes">
+          <article class="cartao">
+            <h3>Fale sobre mudanças</h3>
+            <p>
+              Incentive sua filha a contar se notar algo diferente ou sentir
+              preocupação. Escute com calma e sem assustá-la.
+            </p>
+          </article>
+
+          <article class="cartao">
+            <h3>Procure orientação</h3>
+            <p>
+              Se houver uma mudança que preocupa, converse com o pediatra ou
+              procure uma unidade de saúde para receber avaliação adequada.
+            </p>
+          </article>
+
+          <article class="cartao">
+            <h3>Sem exames por conta própria</h3>
+            <p>
+              Exames não devem ser feitos sem indicação profissional. A equipe
+              de saúde pode orientar se alguma avaliação é necessária.
+            </p>
+          </article>
+        </div>
+
+        <div class="nota">
+          O câncer de mama é muito raro em crianças. Esta página é informativa e
+          não substitui consulta, diagnóstico ou orientação de profissionais de
+          saúde.
+        </div>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <div class="container duas-colunas">
+        <img
+          class="foto-secao"
+          src="img/mafi.jpg"
+          alt="Imagem ilustrativa de atendimento em saúde"
+        >
+
+        <div>
+          <span class="etiqueta">Uma conversa de confiança</span>
+          <h2>Ensine sua filha que ela pode pedir ajuda</h2>
+          <p>
+            Conversas sobre o corpo podem acontecer aos poucos, no dia a dia,
+            com linguagem simples e apropriada à idade. Reforce que ela pode
+            conversar com você ou com outro adulto de confiança sobre dúvidas,
+            desconfortos ou mudanças.
+          </p>
+          <p>
+            Cuidar também é respeitar limites, privacidade e o tempo de cada
+            criança. Se surgir uma preocupação de saúde, procure orientação
+            profissional em vez de tentar avaliar ou tratar em casa.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div class="container">
+      <div class="rodape-conteudo">
+        <div>
+          <a class="marca" href="index.html" aria-label="Aureola - voltar ao início">
+            <img src="img/logo.png" alt="">
+            <span>Aureola</span>
+          </a>
+          <p>
+            Informação, conscientização e acolhimento sobre a saúde das mamas.
+          </p>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <p>
+            E-mail:
+            <a href="mailto:aureola@gmail.com">aureola@gmail.com</a>
+          </p>
+          <p>Telefone: <a href="tel:+5519999854513">19 99985-4513</a></p>
+        </div>
+
+        <div>
+          <h3>Endereço</h3>
+          <p>Rua Hipotetic, 13 - Americana, São Paulo</p>
+          <div class="rodape-links">
+            <a href="caminhadas.html">Caminhadas</a>
+            <a href="tratamentos.html">Tratamentos e Vitórias</a>
+            <a href="Preservação.html">Preservação</a>
+            <a href="Ondefazerexames.html">Onde fazer exames</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="direitos">© 2026 Aureola. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

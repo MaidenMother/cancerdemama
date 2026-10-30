@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Histórias de acolhimento, tratamento e vitórias de pessoas que enfrentaram o câncer de mama."
+  >
+  <title>Tratamentos e Vitórias | Aureola</title>
+
+  <style>
+    :root {
+      --rosa-escuro: #9f315e;
+      --rosa-medio: #d66b94;
+      --rosa-claro: #f9e7ee;
+      --rosa-suave: #fff5f8;
+      --texto: #30252a;
+      --texto-suave: #66575e;
+      --branco: #ffffff;
+      --borda: #f0d7e0;
+      --sombra: 0 12px 32px rgba(111, 40, 70, 0.1);
+      --raio: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--branco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid var(--borda);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-conteudo {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .marca {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 12px;
+      color: var(--rosa-escuro);
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .marca img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--texto);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a[aria-current="page"] {
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+    }
+
+    .hero {
+      padding: 64px 0;
+      background:
+        radial-gradient(ellipse at 90% 15%, #f8dce7 0, transparent 34%),
+        linear-gradient(120deg, #fff 45%, #fff5f8 100%);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 14px;
+      color: var(--rosa-escuro);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      color: var(--rosa-escuro);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: var(--texto-suave);
+      font-size: 1.08rem;
+    }
+
+    .video-caixa {
+      overflow: hidden;
+      margin-top: 28px;
+      border: 8px solid var(--branco);
+      border-radius: var(--raio);
+      background: #1d1017;
+      box-shadow: var(--sombra);
+    }
+
+    .video-caixa iframe {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 260px;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 20px;
+      border: 2px solid var(--rosa-escuro);
+      border-radius: 999px;
+      color: var(--branco);
+      background: var(--rosa-escuro);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .botao:hover,
+    .botao:focus-visible {
+      background: #7f2449;
+    }
+
+    section.conteudo {
+      padding: 70px 0;
+    }
+
+    .secao-rosa {
+      background: var(--rosa-suave);
+    }
+
+    .secao-rosa-forte {
+      background: var(--rosa-claro);
+    }
+
+    .titulo-secao {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .titulo-secao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .duas-colunas {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+    }
+
+    .foto-secao {
+      width: 100%;
+      height: 340px;
+      border-radius: var(--raio);
+      box-shadow: var(--sombra);
+      object-fit: cover;
+    }
+
+    .cartoes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cartao {
+      padding: 26px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: var(--branco);
+      box-shadow: 0 8px 24px rgba(111, 40, 70, 0.06);
+    }
+
+    .cartao h3 {
+      margin-bottom: 10px;
+      color: var(--rosa-escuro);
+      font-size: 1.2rem;
+    }
+
+    .cartao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .nota {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      color: var(--texto-suave);
+      background: var(--branco);
+      font-size: 0.94rem;
+    }
+
+    .rodape {
+      padding: 48px 0 20px;
+      color: var(--branco);
+      background: #56263b;
+    }
+
+    .rodape-conteudo {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .rodape .marca {
+      margin-bottom: 12px;
+      color: var(--branco);
+    }
+
+    .rodape .marca img {
+      background: var(--branco);
+    }
+
+    .rodape h3 {
+      margin-bottom: 10px;
+      color: #ffd8e6;
+    }
+
+    .rodape p,
+    .rodape a {
+      color: #f7eaf0;
+    }
+
+    .rodape-links {
+      display: grid;
+      justify-items: start;
+      gap: 6px;
+    }
+
+    .direitos {
+      margin: 34px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+      color: #f7eaf0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .nav-conteudo {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .duas-colunas {
+        grid-template-columns: 1fr;
+      }
+
+      .cartoes {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section.conteudo {
+        padding: 54px 0;
+      }
+
+      .nav-links {
+        gap: 4px;
+      }
+
+      .nav-links a {
+        padding: 7px 10px;
+        font-size: 0.84rem;
+      }
+
+      .cartoes,
+      .rodape-conteudo {
+        grid-template-columns: 1fr;
+      }
+
+      .foto-secao {
+        height: 280px;
+      }
+
+      .video-caixa iframe {
+        min-height: 190px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-conteudo">
+      <a class="marca" href="index.html" aria-label="Aureola - página inicial">
+        <img src="img/logo.png" alt="Logo da Aureola">
+        <span>Aureola</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="caminhadas.html">Caminhadas</a>
+        <a href="tratamentos.html" aria-current="page">Tratamentos e Vitórias</a>
+        <a href="Preservação.html">Preservação</a>
+        <a href="Ondefazerexames.html">Onde fazer exames</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="etiqueta">Histórias de coragem e acolhimento</span>
+        <h1>Celebramos cada trajetória e cada vitória</h1>
+        <p>
+          O câncer de mama pode afetar pessoas de diferentes idades e histórias.
+          Esta página é dedicada a quem enfrentou ou está enfrentando a doença —
+          mulheres, crianças, pessoas idosas e homens — e também a quem oferece
+          apoio durante cada etapa.
+        </p>
+
+        <div class="video-caixa">
+          <iframe
+            src="https://globoplay.globo.com/v/2675005/"
+            title="1 Por Minuto: todos contra o câncer de mama — Globoplay"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p class="nota">
+          Se o player não carregar aqui, assista no site oficial do Globoplay.
+          O vídeo pode exigir interação ou acesso à plataforma para reproduzir.
+        </p>
+        <a
+          class="botao"
+          href="https://globoplay.globo.com/v/2675005/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Assistir no Globoplay
+        </a>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <div class="container duas-colunas">
+        <div>
+          <span class="etiqueta">Cada história importa</span>
+          <h2>Vitórias são feitas de muitos passos</h2>
+          <p>
+            Cada experiência com o câncer é única. Para algumas pessoas, vitória
+            significa concluir uma etapa do tratamento; para outras, é encontrar
+            apoio, atravessar um dia difícil ou seguir em frente com cuidado e
+            esperança.
+          </p>
+          <p>
+            Celebrar essas trajetórias também é reconhecer a força das pessoas
+            e a importância do apoio de familiares, amigos, profissionais de
+            saúde e redes de acolhimento.
+          </p>
+        </div>
+
+        <img
+          class="foto-secao"
+          src="img/family.jpg"
+          alt="Imagem ilustrativa de uma conversa e cuidado em saúde"
+        >
+      </div>
+    </section>
+
+    <section class="conteudo secao-rosa">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Acolhimento para todos</span>
+          <h2>Não existe uma única forma de viver essa jornada</h2>
+          <p>
+            Pessoas de diferentes idades e gêneros podem ser afetadas pelo
+            câncer de mama. Cada uma merece informação respeitosa, atendimento
+            adequado e apoio sem julgamentos.
+          </p>
+        </div>
+
+        <div class="cartoes">
+          <article class="cartao">
+            <h3>Mulheres</h3>
+            <p>
+              O acompanhamento e as decisões de tratamento devem ser conversados
+              com a equipe de saúde, considerando a situação e as necessidades
+              de cada pessoa.
+            </p>
+          </article>
+
+          <article class="cartao">
+            <h3>Crianças e jovens</h3>
+            <p>
+              Um diagnóstico nessa fase exige atenção especializada e apoio
+              próximo. A família e a equipe de saúde podem ajudar a construir
+              uma rede de cuidado acolhedora.
+            </p>
+          </article>
+
+          <article class="cartao">
+            <h3>Pessoas idosas e homens</h3>
+            <p>
+              Câncer de mama também pode ocorrer em homens. Mudanças nas mamas
+              merecem avaliação profissional em qualquer idade.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="conteudo secao-rosa-forte">
+      <div class="container duas-colunas">
+        <img
+          class="foto-secao"
+          src="img/vitoria.jpg"
+          alt="Imagem ilustrativa sobre o câncer de mama em homens"
+        >
+
+        <div>
+          <span class="etiqueta">Cuidado e informação</span>
+          <h2>Tratamento é acompanhado por profissionais</h2>
+          <p>
+            As opções de tratamento variam conforme o tipo e as características
+            da doença e da pessoa. A equipe responsável pode explicar as
+            alternativas, os benefícios e os possíveis efeitos de cada etapa.
+          </p>
+          <p>
+            Informações de outras pessoas podem trazer acolhimento, mas não
+            substituem uma avaliação profissional. Dúvidas sobre diagnóstico,
+            tratamento ou sintomas devem ser conversadas com a equipe de saúde.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <div class="container duas-colunas">
+        <div>
+          <span class="etiqueta">Rede de apoio</span>
+          <h2>Ninguém precisa passar por isso sem apoio</h2>
+          <p>
+            Escutar sem julgar, acompanhar consultas quando a pessoa quiser e
+            ajudar nas tarefas do dia a dia são formas de oferecer apoio.
+            Respeite o tempo, as escolhas e a privacidade de cada pessoa.
+          </p>
+          <p>
+            Para orientação sobre atendimento e exames no Brasil, procure uma
+            Unidade Básica de Saúde ou um profissional de saúde.
+          </p>
+        </div>
+
+        <img
+          class="foto-secao"
+          src="img/amigas.jpg"
+          alt="Imagem ilustrativa de pessoas reunidas para compartilhar informação"
+        >
+      </div>
+    </section>
+
+    <section class="conteudo secao-rosa">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Cada passo merece ser reconhecido</span>
+          <h2>Às pessoas que enfrentam essa jornada: estamos com vocês</h2>
+          <p>
+            Celebramos as histórias de superação e acolhemos com respeito quem
+            ainda está no caminho. Que toda pessoa encontre informação confiável,
+            cuidado e uma rede de apoio.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div class="container">
+      <div class="rodape-conteudo">
+        <div>
+          <a class="marca" href="index.html" aria-label="Aureola - voltar ao início">
+            <img src="img/logo.png" alt="">
+            <span>Aureola</span>
+          </a>
+          <p>
+            Informação, conscientização e acolhimento sobre a saúde das mamas.
+          </p>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <p>
+            E-mail:
+            <a href="mailto:aureola@gmail.com">aureola@gmail.com</a>
+          </p>
+          <p>Telefone: <a href="tel:+5519999854513">19 99985-4513</a></p>
+        </div>
+
+        <div>
+          <h3>Endereço</h3>
+          <p>Rua Hipotetic, 13 - Americana, São Paulo</p>
+          <div class="rodape-links">
+            <a href="caminhadas.html">Caminhadas</a>
+            <a href="tratamentos.html">Tratamentos e Vitórias</a>
+            <a href="Preservação.html">Preservação</a>
+            <a href="Ondefazerexames.html">Onde fazer exames</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="direitos">© 2026 Aureola. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

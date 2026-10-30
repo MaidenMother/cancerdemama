@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Informações confiáveis sobre sinais do câncer de mama e onde buscar orientação e exames em Americana."
+  >
+  <title>Onde fazer exames | Aureola</title>
+
+  <style>
+    :root {
+      --rosa-escuro: #9f315e;
+      --rosa-medio: #d66b94;
+      --rosa-claro: #f9e7ee;
+      --rosa-suave: #fff5f8;
+      --texto: #30252a;
+      --texto-suave: #66575e;
+      --branco: #ffffff;
+      --borda: #f0d7e0;
+      --sombra: 0 12px 32px rgba(111, 40, 70, 0.1);
+      --raio: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--branco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid var(--borda);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-conteudo {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .marca {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 12px;
+      color: var(--rosa-escuro);
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .marca img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--texto);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a[aria-current="page"] {
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+    }
+
+    .hero {
+      padding: 72px 0;
+      background:
+        radial-gradient(ellipse at 90% 15%, #f8dce7 0, transparent 34%),
+        linear-gradient(120deg, #fff 45%, #fff5f8 100%);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin-bottom: 16px;
+      color: var(--rosa-escuro);
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      color: var(--rosa-escuro);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 800px;
+      color: var(--texto-suave);
+      font-size: 1.08rem;
+    }
+
+    section.conteudo {
+      padding: 70px 0;
+    }
+
+    .secao-rosa {
+      background: var(--rosa-suave);
+    }
+
+    .secao-rosa-forte {
+      background: var(--rosa-claro);
+    }
+
+    .titulo-secao {
+      max-width: 780px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .titulo-secao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .duas-colunas {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+    }
+
+    .foto-secao {
+      width: 100%;
+      height: 340px;
+      border-radius: var(--raio);
+      box-shadow: var(--sombra);
+      object-fit: cover;
+    }
+
+    .cartoes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cartao {
+      padding: 26px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: var(--branco);
+      box-shadow: 0 8px 24px rgba(111, 40, 70, 0.06);
+    }
+
+    .cartao h3 {
+      margin-bottom: 10px;
+      color: var(--rosa-escuro);
+      font-size: 1.2rem;
+    }
+
+    .cartao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .mapa {
+      overflow: hidden;
+      border: 8px solid var(--branco);
+      border-radius: var(--raio);
+      background: var(--rosa-claro);
+      box-shadow: var(--sombra);
+    }
+
+    .mapa iframe {
+      display: block;
+      width: 100%;
+      height: 430px;
+      border: 0;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 20px;
+      border: 2px solid var(--rosa-escuro);
+      border-radius: 999px;
+      color: var(--branco);
+      background: var(--rosa-escuro);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .botao:hover,
+    .botao:focus-visible {
+      background: #7f2449;
+    }
+
+    .lista-fontes {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lista-fontes a {
+      color: var(--rosa-escuro);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .nota {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      color: var(--texto-suave);
+      background: var(--branco);
+      font-size: 0.94rem;
+    }
+
+    .rodape {
+      padding: 48px 0 20px;
+      color: var(--branco);
+      background: #56263b;
+    }
+
+    .rodape-conteudo {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .rodape .marca {
+      margin-bottom: 12px;
+      color: var(--branco);
+    }
+
+    .rodape .marca img {
+      background: var(--branco);
+    }
+
+    .rodape h3 {
+      margin-bottom: 10px;
+      color: #ffd8e6;
+    }
+
+    .rodape p,
+    .rodape a {
+      color: #f7eaf0;
+    }
+
+    .rodape-links {
+      display: grid;
+      justify-items: start;
+      gap: 6px;
+    }
+
+    .direitos {
+      margin: 34px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+      color: #f7eaf0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .nav-conteudo {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .duas-colunas {
+        grid-template-columns: 1fr;
+      }
+
+      .cartoes {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section.conteudo {
+        padding: 54px 0;
+      }
+
+      .nav-links {
+        gap: 4px;
+      }
+
+      .nav-links a {
+        padding: 7px 10px;
+        font-size: 0.84rem;
+      }
+
+      .cartoes,
+      .rodape-conteudo {
+        grid-template-columns: 1fr;
+      }
+
+      .foto-secao {
+        height: 280px;
+      }
+
+      .mapa iframe {
+        height: 340px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-conteudo">
+      <a class="marca" href="index.html" aria-label="Aureola - página inicial">
+        <img src="img/logo.png" alt="Logo da Aureola">
+        <span>Aureola</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="caminhadas.html">Caminhadas</a>
+        <a href="tratamentos.html">Tratamentos e Vitórias</a>
+        <a href="Preservação.html">Preservação</a>
+        <a href="Ondefazerexames.html" aria-current="page">Onde fazer exames</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="etiqueta">Informação e orientação</span>
+        <h1>Onde buscar orientação e fazer exames?</h1>
+        <p>
+          Se você percebeu uma mudança nas mamas ou tem dúvidas sobre exames,
+          procure uma Unidade Básica de Saúde (UBS). A equipe poderá avaliar
+          sua situação e orientar sobre os próximos passos e os serviços
+          disponíveis pelo SUS.
+        </p>
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <div class="container duas-colunas">
+        <div>
+          <span class="etiqueta">Fique atenta às mudanças</span>
+          <h2>Sinais que merecem avaliação profissional</h2>
+          <p>
+            Alterações nas mamas podem ter várias causas e não significam
+            necessariamente câncer. Procure um profissional de saúde se notar
+            algo novo ou persistente, como:
+          </p>
+          <ul>
+            <li>caroço ou área endurecida na mama ou na axila;</li>
+            <li>mudança no tamanho ou no formato da mama;</li>
+            <li>pele avermelhada, retraída ou com aspecto de casca de laranja;</li>
+            <li>mudança no mamilo ou saída espontânea de secreção, especialmente com sangue;</li>
+            <li>ferida ou alteração na pele que não melhora.</li>
+          </ul>
+          <p>
+            Não espere por uma campanha para procurar atendimento se uma
+            alteração preocupa você. Só um profissional pode avaliar o que
+            está acontecendo.
+          </p>
+        </div>
+
+        <img
+          class="foto-secao"
+          src="img/espelho.jpg"
+          alt="Imagem ilustrativa de uma conversa durante atendimento de saúde"
+        >
+      </div>
+    </section>
+
+    <section class="conteudo secao-rosa-forte">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Atendimento perto de você</span>
+          <h2>Unidades de saúde em Americana</h2>
+          <p>
+            O mapa abaixo pesquisa UBS e serviços de saúde em Americana, SP.
+            Confira com a unidade se ela oferece o atendimento ou exame de que
+            você precisa e como fazer o agendamento.
+          </p>
+        </div>
+
+        <div class="mapa">
+          <iframe
+            src="https://www.google.com/maps?q=UBS+unidade+de+sa%C3%BAde+Americana+SP&output=embed"
+            title="Mapa de unidades básicas de saúde em Americana, São Paulo"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="nota">
+          Os locais e informações do mapa são fornecidos pelo Google Maps e
+          podem mudar. Confirme endereço, horários, disponibilidade de exames
+          e necessidade de encaminhamento diretamente com o serviço de saúde.
+          Você também pode procurar a UBS responsável pelo seu bairro.
+        </div>
+
+        <p style="text-align: center;">
+          <a
+            class="botao"
+            href="https://www.google.com/maps/search/?api=1&query=UBS+unidade+de+sa%C3%BAde+Americana+SP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir busca no Google Maps
+          </a>
+          <a
+            class="botao"
+            href="https://www.americana.sp.gov.br/americana-index.php"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Site oficial da Prefeitura de Americana
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="conteudo secao-rosa">
+      <div class="container duas-colunas">
+        <div>
+          <span class="etiqueta">Acompanhamento individual</span>
+          <h2>Exames e rastreamento dependem de orientação</h2>
+          <p>
+            A indicação e a frequência de exames variam conforme idade,
+            histórico familiar, sintomas e recomendações de saúde. Converse
+            com a equipe da UBS para entender qual cuidado é indicado para você.
+          </p>
+          <p>
+            Se houver sintomas ou uma alteração, informe isso ao profissional:
+            a investigação de uma queixa é diferente dos exames de rastreamento
+            realizados em pessoas sem sintomas.
+          </p>
+        </div>
+
+        <img
+          class="foto-secao"
+          src="img/sofá2.jpg"
+          alt="Imagem ilustrativa de uma unidade de saúde"
+        >
+      </div>
+    </section>
+
+    <section class="conteudo">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Fontes confiáveis</span>
+          <h2>Leia mais sobre sintomas e cuidados</h2>
+          <p>
+            Consulte materiais de órgãos oficiais e converse com profissionais
+            de saúde para receber orientação adequada ao seu caso.
+          </p>
+        </div>
+
+        <ul class="lista-fontes">
+          <li>
+            <a
+              href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/cancer-de-mama"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ministério da Saúde — Câncer de mama
+            </a>
+            <span> — informações sobre sinais, diagnóstico e tratamento.</span>
+          </li>
+          <li>
+            <a
+              href="https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/mama"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instituto Nacional de Câncer (INCA) — Câncer de mama
+            </a>
+            <span> — informações oficiais sobre a doença e prevenção.</span>
+          </li>
+          <li>
+            <a
+              href="https://www.americana.sp.gov.br/americana-index.php"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Prefeitura de Americana
+            </a>
+            <span> — portal oficial para consultar informações e serviços municipais.</span>
+          </li>
+        </ul>
+
+        <div class="nota">
+          Esta página é informativa e não substitui consulta, diagnóstico ou
+          orientação médica. Ao notar uma alteração ou ter dúvidas, procure
+          uma unidade de saúde.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div class="container">
+      <div class="rodape-conteudo">
+        <div>
+          <a class="marca" href="index.html" aria-label="Aureola - voltar ao início">
+            <img src="img/logo.png" alt="">
+            <span>Aureola</span>
+          </a>
+          <p>
+            Informação, conscientização e acolhimento sobre a saúde das mamas.
+          </p>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <p>
+            E-mail:
+            <a href="mailto:aureola@gmail.com">aureola@gmail.com</a>
+          </p>
+          <p>Telefone: <a href="tel:+5519999854513">19 99985-4513</a></p>
+        </div>
+
+        <div>
+          <h3>Endereço</h3>
+          <p>Rua Hipotetic, 13 - Americana, São Paulo</p>
+          <div class="rodape-links">
+            <a href="caminhadas.html">Caminhadas</a>
+            <a href="tratamentos.html">Tratamentos e Vitórias</a>
+            <a href="Preservação.html">Preservação</a>
+            <a href="Ondefazerexames.html">Onde fazer exames</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="direitos">© 2026 Aureola. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

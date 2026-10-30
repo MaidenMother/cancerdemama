@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Conheça a Caminhada Rosa do Bem em Americana e veja o vídeo da 16ª edição."
+  >
+  <title>Caminhadas | Aureola</title>
+
+  <style>
+    :root {
+      --rosa-escuro: #9f315e;
+      --rosa-medio: #d66b94;
+      --rosa-claro: #f9e7ee;
+      --rosa-suave: #fff5f8;
+      --texto: #30252a;
+      --texto-suave: #66575e;
+      --branco: #ffffff;
+      --borda: #f0d7e0;
+      --sombra: 0 12px 32px rgba(111, 40, 70, 0.1);
+      --raio: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--branco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid var(--borda);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-conteudo {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .marca {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 12px;
+      color: var(--rosa-escuro);
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .marca img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--texto);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a[aria-current="page"] {
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+    }
+
+    .hero {
+      padding: 76px 0;
+      background:
+        radial-gradient(ellipse at 90% 15%, #f8dce7 0, transparent 34%),
+        linear-gradient(120deg, #fff 45%, #fff5f8 100%);
+    }
+
+    .hero-conteudo {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      color: var(--rosa-escuro);
+      background: var(--rosa-claro);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 18px;
+      color: var(--rosa-escuro);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      line-height: 1.08;
+    }
+
+    h2 {
+      color: var(--rosa-escuro);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 590px;
+      color: var(--texto-suave);
+      font-size: 1.1rem;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border: 2px solid var(--rosa-escuro);
+      border-radius: 999px;
+      color: var(--branco);
+      background: var(--rosa-escuro);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .botao:hover,
+    .botao:focus-visible {
+      transform: translateY(-2px);
+      background: #7f2449;
+    }
+
+    .hero-imagem img {
+      width: 100%;
+      height: 370px;
+      border: 8px solid var(--branco);
+      border-radius: 48% 48% 24px 24px;
+      box-shadow: var(--sombra);
+      object-fit: cover;
+    }
+
+    .legenda {
+      margin: 10px 0 0;
+      color: var(--texto-suave);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .secao-rosa {
+      background: var(--rosa-suave);
+    }
+
+    .secao-rosa-forte {
+      background: var(--rosa-claro);
+    }
+
+    .titulo-secao {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .titulo-secao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .conteudo-duplo {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+    }
+
+    .cartoes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cartao {
+      padding: 26px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: var(--branco);
+      box-shadow: 0 8px 24px rgba(111, 40, 70, 0.06);
+    }
+
+    .cartao h3 {
+      margin-bottom: 10px;
+      color: var(--rosa-escuro);
+      font-size: 1.2rem;
+    }
+
+    .cartao p {
+      margin-bottom: 0;
+      color: var(--texto-suave);
+    }
+
+    .foto-secao {
+      width: 100%;
+      height: 340px;
+      border-radius: var(--raio);
+      box-shadow: var(--sombra);
+      object-fit: cover;
+    }
+
+    .nota {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      color: var(--texto-suave);
+      background: var(--branco);
+      font-size: 0.94rem;
+    }
+
+    .video-caixa {
+      overflow: hidden;
+      border: 8px solid var(--branco);
+      border-radius: var(--raio);
+      background: #1d1017;
+      box-shadow: var(--sombra);
+    }
+
+    .video-caixa iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .galeria figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: 18px;
+      background: var(--branco);
+      box-shadow: 0 8px 24px rgba(111, 40, 70, 0.06);
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .galeria figcaption {
+      padding: 14px 16px;
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+    }
+
+    .rodape {
+      padding: 48px 0 20px;
+      color: var(--branco);
+      background: #56263b;
+    }
+
+    .rodape-conteudo {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .rodape .marca {
+      margin-bottom: 12px;
+      color: var(--branco);
+    }
+
+    .rodape .marca img {
+      background: var(--branco);
+    }
+
+    .rodape h3 {
+      margin-bottom: 10px;
+      color: #ffd8e6;
+    }
+
+    .rodape p,
+    .rodape a {
+      color: #f7eaf0;
+    }
+
+    .rodape a:hover,
+    .rodape a:focus-visible {
+      color: var(--branco);
+    }
+
+    .rodape-links {
+      display: grid;
+      justify-items: start;
+      gap: 6px;
+    }
+
+    .direitos {
+      margin: 34px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+      color: #f7eaf0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .nav-conteudo {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero-conteudo,
+      .conteudo-duplo {
+        grid-template-columns: 1fr;
+      }
+
+      .cartoes {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .nav-links {
+        gap: 4px;
+      }
+
+      .nav-links a {
+        padding: 7px 10px;
+        font-size: 0.84rem;
+      }
+
+      .cartoes,
+      .galeria,
+      .rodape-conteudo {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-imagem img,
+      .foto-secao {
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-conteudo">
+      <a class="marca" href="index.html" aria-label="Aureola - página inicial">
+        <img src="img/logo.png" alt="Logo da Aureola">
+        <span>Aureola</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="caminhadas.html" aria-current="page">Caminhadas</a>
+        <a href="tratamentos.html">Tratamentos e Vitórias</a>
+        <a href="Preservação.html">Prevenção</a>
+        <a href="Ondefazerexames.html">Onde fazer exames</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-conteudo">
+        <div>
+          <span class="etiqueta">Americana • São Paulo</span>
+          <h1>Caminhar juntos também é uma forma de conscientizar</h1>
+          <p>
+            As caminhadas do Outubro Rosa reúnem pessoas em torno da
+            conscientização sobre o câncer de mama. Em Americana, o vídeo
+            apresentado nesta página registra a 16ª Caminhada Rosa do Bem.
+          </p>
+          <a class="botao" href="#video">Assistir ao vídeo</a>
+        </div>
+
+        <div class="hero-imagem">
+          <img
+            src="img/16caminhada.jpg"
+            alt="Imagem ilustrativa de uma atividade de conscientização"
+          >
+          <p class="legenda"></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container conteudo-duplo">
+        <div>
+          <span class="etiqueta">A caminhada em Americana</span>
+          <h2>Rosa do Bem: mobilização e informação</h2>
+          <p>
+            O vídeo incorporado abaixo tem o título “16ª Caminhada Rosa do Bem
+            – POR AMOR À VIDA | Americana SP”. Ele registra uma edição da
+            caminhada realizada em Americana e serve como memória visual da
+            mobilização.
+          </p>
+          <p>
+            Iniciativas como essa ajudam a colocar a saúde das mamas em pauta,
+            aproximar a comunidade e incentivar a busca por informações e
+            atendimento profissional.
+          </p>
+        </div>
+
+        <img
+          class="foto-secao"
+          src="img/informação.jpg"
+          alt="Imagem ilustrativa relacionada à saúde e ao acolhimento"
+        >
+      </div>
+    </section>
+
+    <section class="secao-rosa" id="video">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Registro em vídeo</span>
+          <h2>16ª Caminhada Rosa do Bem</h2>
+        </div>
+
+        <div class="video-caixa">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/KwFa64L-Rd0?autoplay=1&amp;mute=1&amp;controls=1&amp;loop=1&amp;playlist=KwFa64L-Rd0&amp;playsinline=1"
+            title="16ª Caminhada Rosa do Bem – POR AMOR À VIDA | Americana SP"
+            allow="autoplay; encrypted-media; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p class="legenda">
+         16ª Caminhada Rosa do Bem – POR AMOR À VIDA | Americana SP, 18/10/2026
+        </p>
+      </div>
+    </section>
+
+    <section class="secao-rosa-forte">
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Mais do que um percurso</span>
+          <h2>Por que participar de uma caminhada?</h2>
+          <p>
+            A caminhada é uma oportunidade de demonstrar apoio e compartilhar
+            informação. Ela não substitui consultas, exames ou orientações de
+            profissionais de saúde.
+          </p>
+        </div>
+
+        <div class="cartoes">
+          <article class="cartao">
+            <h3>Levar informação à comunidade</h3>
+            <p>
+              Ações públicas ajudam a iniciar conversas sobre saúde das mamas
+              e a divulgar onde buscar orientação confiável.
+            </p>
+          </article>
+
+          <article class="cartao">
+            <h3>Demonstrar apoio</h3>
+            <p>
+              Participar pode ser uma forma de apoiar pessoas em tratamento,
+              familiares, profissionais e grupos de acolhimento.
+            </p>
+          </article>
+
+          <article class="cartao">
+            <h3>Buscar orientação</h3>
+            <p>
+              Se tiver dúvidas ou perceber uma alteração, procure uma unidade
+              de saúde ou profissional. Cada situação precisa de avaliação
+              individual.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="titulo-secao">
+          <span class="etiqueta">Galeria</span>
+          <h2>Imagens da campanha</h2>
+          <p>
+            Sempre procure aprender mais sobre o problema e como vencê-lo.
+          </p>
+        </div>
+
+        <div class="galeria">
+          <figure>
+            <img
+              src="img/consulta.jpg"
+              alt="Imagem ilustrativa de uma palestra de conscientização"
+            >
+            <figcaption>Informação e conversa também fazem parte da campanha.</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="img/usb.jpg"
+              alt="Imagem ilustrativa de um espaço de saúde"
+            >
+            <figcaption>Procure os serviços de saúde para receber orientação.</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="img/homemafetado.jpg"
+              alt="Imagem ilustrativa sobre conscientização do câncer de mama"
+            >
+            <figcaption>A conscientização sobre a saúde das mamas é para todos.</figcaption>
+          </figure>
+        </div>
+
+        <div class="nota">
+            <section class="secao-rosa" id="rosa-do-bem">
+  <div class="container">
+    <div class="titulo-secao">
+      <span class="etiqueta">Quem organiza</span>
+      <h2>Instituto Rosa do Bem</h2>
+      <p>
+        Fundado em 2011, o Instituto Rosa do Bem promove ações de prevenção
+        e conscientização sobre o câncer de mama. Entre elas estão campanhas
+        com exames gratuitos, caminhadas, palestras e eventos em Americana.
+      </p>
+      <a
+        class="botao"
+        href="https://www.rosadobem.com.br/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visite o site oficial
+      </a>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div class="container">
+      <div class="rodape-conteudo">
+        <div>
+          <a class="marca" href="index.html" aria-label="Aureola - voltar ao início">
+            <img src="img/logo.png" alt="">
+            <span>Aureola</span>
+          </a>
+          <p>
+            Informação, conscientização e acolhimento sobre a saúde das mamas.
+          </p>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <p>
+            E-mail:
+            <a href="mailto:aureola@gmail.com">aureola@gmail.com</a>
+          </p>
+          <p>Telefone: <a href="tel:+5519999854513">19 99985-4513</a></p>
+        </div>
+
+        <div>
+          <h3>Endereço</h3>
+          <p>Rua Hipotetic, 13 - Americana, São Paulo</p>
+          <div class="rodape-links">
+            <a href="caminhadas.html">Caminhadas</a>
+            <a href="tratamentos.html">Tratamentos e Vitórias</a>
+            <a href="Preservação.html">Preservação</a>
+            <a href="Ondefazerexames.html">Onde fazer exames</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="direitos">© 2026 Aureola. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
